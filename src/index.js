@@ -1,33 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const connection = require('./connection');
 
 const app = express();
 
-const users = [
-  {
-    id: 125,
-    name: 'Pepe',
-    surname: 'Suarez',
-  },
-  {
-    id: 100,
-    name: 'Maria',
-    surname: 'Suarez',
-  },
-];
-
-const products = [
-  {
-    id: 10,
-    name: 'Monitor',
-    price: '50000',
-  },
-  {
-    id: 38,
-    name: 'Mouse',
-    surname: '5200',
-  },
-];
+app.use(cors());
 
 app.get('/users', (req, res) => {
   const sql = `SELECT * FROM clientes`;
